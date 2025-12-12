@@ -1,0 +1,137 @@
+
+---
+
+## 🔧 Technologies & Libraries Used
+
+- **Python**
+- **Pandas**
+- **NumPy**
+- **Matplotlib**
+- **Seaborn**
+- **SciPy** (statistical tests)
+- **Scikit-Learn** (ML models)
+- **Jupyter Notebook**
+
+---
+
+# 📊 1. Data Cleaning
+
+Performed:
+- Handling missing values  
+  - Filled `age` using **median**  
+  - Filled `embarked` + `embark_town` using **mode**  
+  - Dropped `deck` column (70%+ missing)  
+- Removing duplicates  
+- Detecting outliers using boxplots  
+- Deciding to **keep real-world outliers** (e.g., high fares)
+
+---
+
+# 📈 2. Exploratory Data Analysis (EDA)
+
+The following visualizations were created:
+
+### ✔ Histograms  
+Show distribution of numerical variables (`age`, `fare`).
+
+### ✔ Correlation Heatmap  
+Used to identify relationships between:
+- age  
+- pclass  
+- fare  
+- sibsp  
+- parch  
+- survived  
+
+### ✔ Pair Plot  
+Visualizes pairwise relationships between features.
+
+### ✔ Box Plots  
+Used to detect and interpret outliers and compare distributions across groups (e.g., survival vs age).
+
+---
+
+# 🧪 3. Statistical Hypothesis Tests
+
+### ✔ **Two-sample t-test**
+Compared mean ages of:
+- Survived passengers  
+- Did not survive  
+
+### ✔ **Chi-square test**
+Checked relationship between:
+- Sex  
+- Survival  
+
+(Strong dependency found.)
+
+### ✔ **ANOVA**
+Compared fare differences across:
+- 1st class  
+- 2nd class  
+- 3rd class  
+
+(Fares differ significantly.)
+
+---
+
+# 📉 4. Regression Modeling
+
+Built a **linear regression model** to predict **fare** using:  
+- age  
+- pclass  
+- sibsp  
+- parch  
+
+Evaluated using:
+- R² score  
+- Mean Squared Error (MSE)
+
+---
+
+# 🤖 5. Machine Learning Model (Survival Prediction)
+
+Built a **Logistic Regression** model to predict **survival** using features:  
+- pclass  
+- sex  
+- age  
+- fare  
+- sibsp  
+- parch  
+- alone  
+
+Evaluated with:
+- Accuracy  
+- Precision  
+- Recall  
+- F1-score  
+
+---
+
+# 🧱 6. Feature Engineering
+
+Created new features:
+- `family_size` = sibsp + parch + 1  
+- `is_child` (child indicator)  
+- `fare_per_person`  
+
+These features improved the interpretability and predictive power.
+
+---
+
+# 📝 7. Key Insights
+
+- **Females had a much higher survival rate** than males.  
+- Passengers in **1st class survived more** than 2nd and 3rd.  
+- **Younger passengers (especially children)** had higher survival probability.  
+- Fare varies drastically by class — confirmed through ANOVA.  
+- Logistic regression identifies **sex** and **pclass** as the strongest predictors.
+
+---
+
+# ▶️ How to Run the Project
+
+### 1. Clone the repository:
+```bash
+git clone https://github.com/coer77ai/statistical_data_analysis.git
+cd statistical_data_analysis
